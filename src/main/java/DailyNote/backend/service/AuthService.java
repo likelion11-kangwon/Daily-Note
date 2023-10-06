@@ -1,5 +1,5 @@
 package DailyNote.backend.service;
 
-public class UserService {
+public class AuthService {
 
 }

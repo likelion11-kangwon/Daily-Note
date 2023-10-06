@@ -1,4 +1,4 @@
 package DailyNote.backend.controller;
 
-public class UserApiController {
+public class AuthController {
 }
