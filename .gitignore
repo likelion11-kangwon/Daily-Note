@@ -1,3 +1,6 @@
+#properties
+application.properties
+
 aHELP.md
 build/
 !gradle/wrapper/gradle-wrapper.jar
