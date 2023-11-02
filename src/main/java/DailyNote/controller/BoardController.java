@@ -29,7 +29,7 @@ public class BoardController {
     }
 
 
-    @GetMapping("/")
+    @GetMapping("")
     public String findAll(Model model){
         //DB에서 전체 게시글 데이터를 가져와서 list.html에 보여줌
         List<BoardDTO> boardDTOList = boardService.findAll();
@@ -55,5 +55,13 @@ public class BoardController {
         BoardDTO boardDTO = boardService.findById(id);
         model.addAttribute("boardUpdate", boardDTO);
         return "update";
+    }
+
+    @PostMapping("/update")
+    public String update(@ModelAttribute BoardDTO boardDTO, Model model) {
+        BoardDTO board = boardService.update(boardDTO);
+        model.addAttribute("board", board);
+        return "detail";
+        //"redirect:/board/" +boardDTO.getId();
     }
 }

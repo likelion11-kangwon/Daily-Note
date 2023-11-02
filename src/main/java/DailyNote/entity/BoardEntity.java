@@ -41,4 +41,16 @@ public class BoardEntity extends BaseEntity {
         boardEntity.setBoardHits(0);
         return boardEntity;
     }
+
+    //ID가 있어야 JPA내에서 UPDATE로 인식, 없으면 INSERT로 인식
+    public static BoardEntity toUpdateEntity(BoardDTO boardDTO) {
+        BoardEntity boardEntity = new BoardEntity();
+        boardEntity.setId(boardDTO.getId());
+        boardEntity.setBoardWriter(boardDTO.getBoardWriter());
+        boardEntity.setBoardPass(boardDTO.getBoardPass());
+        boardEntity.setBoardContents(boardDTO.getBoardContents());
+        boardEntity.setBoardTitle(boardDTO.getBoardTitle());
+        boardEntity.setBoardHits(boardDTO.getBoardHits());
+        return boardEntity;
+    }
 }
